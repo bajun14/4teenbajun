@@ -180,13 +180,15 @@ $faculty = [
             margin-top: 0;
         }
 
-        .datetime {
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid #ddd;
-            font-size: 16px;
-            color: #2c3e50;
+        .datetime-box {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
             text-align: center;
+            margin-top: 20px;
+            margin-left: 30px;
+            transition: transform 0.3s ease;
         }
 
         @media (max-width: 900px) {
@@ -199,10 +201,7 @@ $faculty = [
             .profile-container {
                 justify-content: center;
                 margin-bottom: 15px;
-            }
-
-            .profile-picture {
-                margin: 0;
+                padding: 0;
             }
 
             .faculty-info {
@@ -210,8 +209,10 @@ $faculty = [
                 padding: 0;
             }
 
-            .dashboard-options {
-                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            .datetime-box {
+                margin: 20px 0 0 0;
+                width: 100%;
+                max-width: 350px;
             }
         }
     </style>
@@ -245,6 +246,14 @@ $faculty = [
             </div>
         </div>
 
+        <!-- Today's Schedule Box -->
+        <div class="datetime-box">
+            <div class="datetime">
+                <p><strong>Today's Date:</strong> <span id="date"></span></p>
+                <p><strong>Current Time:</strong> <span id="time"></span></p>
+            </div>
+        </div>
+
         <div class="dashboard-options">
             <div class="option-card" onclick="window.location.href='mark_attendance.php'">
                 <i class="fas fa-calendar-check"></i>
@@ -262,12 +271,6 @@ $faculty = [
                 <i class="fas fa-calendar-alt"></i>
                 <h3>Schedule</h3>
             </div>
-        </div>
-
-        <!-- DATE AND TIME DISPLAY -->
-        <div class="datetime">
-            <p><strong>Date:</strong> <span id="date"></span></p>
-            <p><strong>Time:</strong> <span id="time"></span></p>
         </div>
     </div>
 
