@@ -180,6 +180,15 @@ $faculty = [
             margin-top: 0;
         }
 
+        .datetime {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            font-size: 16px;
+            color: #2c3e50;
+            text-align: center;
+        }
+
         @media (max-width: 900px) {
             .faculty-details {
                 flex-direction: column;
@@ -254,6 +263,24 @@ $faculty = [
                 <h3>Schedule</h3>
             </div>
         </div>
+
+        <!-- DATE AND TIME DISPLAY -->
+        <div class="datetime">
+            <p><strong>Date:</strong> <span id="date"></span></p>
+            <p><strong>Time:</strong> <span id="time"></span></p>
+        </div>
     </div>
+
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById("date").textContent = now.toLocaleDateString('en-US', options);
+            document.getElementById("time").textContent = now.toLocaleTimeString('en-US');
+        }
+
+        setInterval(updateDateTime, 1000);
+        updateDateTime();
+    </script>
 </body>
 </html>
