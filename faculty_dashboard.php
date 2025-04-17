@@ -21,7 +21,6 @@ $faculty = [
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        /* General Styles */
         body {
             font-family: 'Poppins', sans-serif;
             background-color: #f4f4f4;
@@ -31,7 +30,7 @@ $faculty = [
 
         nav {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
             background: #2c3e50;
             padding: 15px 20px;
@@ -180,15 +179,24 @@ $faculty = [
             margin-top: 0;
         }
 
-        .datetime-box {
-            background-color: #ffffff;
-            border-radius: 12px;
-            padding: 20px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
+        .add-notice-row {
             margin-top: 20px;
-            margin-left: 30px;
-            transition: transform 0.3s ease;
+            text-align: center;
+        }
+
+        .add-notice-btn {
+            background-color: #2ecc71;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .add-notice-btn:hover {
+            background-color: #27ae60;
         }
 
         @media (max-width: 900px) {
@@ -220,13 +228,6 @@ $faculty = [
 <body>
     <nav>
         <div class="logo">🎓 Faculty Portal</div>
-        <ul>
-            <li><a href="faculty_dashboard.php"></a></li>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
-        </ul>
     </nav>
 
     <div class="container">
@@ -246,7 +247,6 @@ $faculty = [
             </div>
         </div>
 
-        <!-- Today's Schedule Box -->
         <div class="datetime-box">
             <div class="datetime">
                 <p><strong>Today's Date:</strong> <span id="date"></span></p>
@@ -259,7 +259,7 @@ $faculty = [
                 <i class="fas fa-calendar-check"></i>
                 <h3>Mark Attendance</h3>
             </div>
-            <div class="option-card" onclick="window.location.href='view_student_profile.php'">
+            <div class="option-card" onclick="window.location.href='student_dashboard.php?student_id=STUD001'">
                 <i class="fas fa-user-graduate"></i>
                 <h3>View Student Profile</h3>
             </div>
@@ -271,6 +271,14 @@ $faculty = [
                 <i class="fas fa-calendar-alt"></i>
                 <h3>Schedule</h3>
             </div>
+            <div class="option-card" onclick="window.location.href='student_register.php'">
+                <i class="fas fa-user-plus"></i>
+                <h3>Student Register</h3>
+            </div>
+        </div>
+
+        <div class="add-notice-row">
+            <button class="add-notice-btn" onclick="window.location.href='add_notice.php'">Add Notice</button>
         </div>
     </div>
 
