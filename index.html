@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>welcome to damia- IDTR</title>
+    <style> 
+    .button.active {
+    background-color: #ccc;
+    color: #003366;
+}
+
+        /* [Same CSS as before — unchanged] */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f0f0f0;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #003366;
+            padding: 10px 20px;
+            color: white;
+        }
+
+        .logo-left, .logo-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            height: 50px;
+            margin: 0 10px;
+        }
+
+        .college-name {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+            flex: 1;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            background-color: #003366;
+            padding: 10px 20px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .button {
+            padding: 8px 16px;
+            font-size: 16px;
+            background-color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            color: #003366;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #ddd;
+        }
+
+        .hero {
+            position: relative;
+            height: 400px;
+            background-image: url('image/idtr bgrd.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-text {
+            text-align: center;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 40px;
+            border-radius: 8px;
+        }
+
+        .hero-text h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+        }
+
+        .content-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .content-section {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 40px 20px;
+    align-items: center;
+    background-color: #fff;
+    gap: 30px; /* Add space between text and image */
+}
+
+.content-section .text,
+.content-section .image {
+    flex: 1 1 45%;
+    min-width: 300px;
+}
+
+        
+
+        .content-section .text h2 {
+            font-size: 28px;
+            color: #003366;
+        }
+
+        .content-section .text p {
+            font-size: 20px;
+            color: #333;
+        }
+
+        .content-section .image {
+            flex: 1;
+        }
+
+        .content-section .image img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer-boxes {
+            display: flex;
+            justify-content: space-around;
+            padding: 30px 20px;
+            background-color: #f5f5f5;
+        }
+
+        .box {
+            flex: 1;
+            max-width: 45%;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .box h2 {
+            color: #003366;
+            margin-bottom: 10px;
+        }
+        .menu-toggle {
+    display: none;
+    background-color: white;
+    color: #003366;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .nav-buttons {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-buttons.show {
+        display: flex;
+    }
+}
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .hero {
+                height: 300px;
+            }
+
+            .hero-text h1 {
+                font-size: 28px;
+            }
+
+            .content-section {
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            .footer-boxes {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            } 
+            html {
+  scroll-behavior: smooth;
+}
+
+
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo-left">
+            <img src="image/left logo.png" alt="IDTR Logo" class="logo">
+        </div>
+        <span class="college-name">Indo Danish Tool Room, Jamshedpur</span>
+        <div class="logo-right">
+            <img src="image/right logo.png" alt="Second Logo" class="logo">
+        </div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <button class="menu-toggle" onclick="toggleMenu()">Menu</button>
+        <div class="nav-buttons" id="navMenu">
+            <button class="button">Home</button>
+            <button class="button">About</button>
+            <button class="button">Login</button>
+            <button class="button" onclick="window.location.href='damia.html'">Damia</button>
+        </div>
+    </nav>
+    
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Welcome to DAMIA</h1>
+            <p>Explore, Learn, and Grow with Indo Danish Tool Room</p>
+        </div>
+    </section>
+
+    <!-- Section Buttons -->
+<div class="content-buttons">
+    <a href="#about" class="button">About</a>
+    <a href="#history" class="button">History</a>
+    <a href="#achievements" class="button">Achievements</a>
+    <a href="#visit" class="button">Visit College</a>
+</div>
+
+<!-- About Section -->
+<section class="content-section" id="about">
+    <div class="text">
+        <h2>About</h2>
+        <p>The Diploma in Advanced Mechatronics and Industrial Automation (DAMIA) is a cutting-edge training program crafted to prepare students for the evolving demands of the modern manufacturing and automation industry. Built on a multidisciplinary foundation, DAMIA combines mechanical, electrical, electronics, and computer engineering to develop highly skilled and adaptable professionals.
+        <p>This course not only strengthens theoretical knowledge but also emphasizes hands-on industrial training, making students proficient in real-world applications. With a focus on smart manufacturing, industrial automation, and digital transformation, DAMIA is aligned with the goals of Industry 4.0 and beyond.
+        <p>Whether you aim to join top-tier industries, work on advanced robotics, or contribute to automation-driven innovations, DAMIA equips you with the tools, technologies, and technical mindset to thrive in a future-ready workplace.
+    </div>
+    <div class="image">
+        <img src="image/about damia.jpg" alt="About DAMIA">
+    </div>
+</section>
+
+<!-- History Section (Image Left) -->
+<section class="content-section" id="history">
+    <div class="image">
+        <img src="image/history.jpg" alt="History of IDTR">
+    </div>
+    <div class="text">
+        <h2>History</h2>
+        <p>The world of technology has witnessed a groundbreaking transformation through the evolution of electronics and artificial intelligence (AI). From the invention of the first vacuum tubes to the rise of intelligent systems, this journey is a powerful story of human innovation, curiosity, and progress.</p>
+        <p>What once started as basic electrical circuits has now evolved into machines that can think, learn, and make decisions.</p>
+        <p>The synergy between hardware and software has opened doors to automation, connectivity, and real-time intelligence.</p>
+        <p>From room-sized computers to pocket-sized supercomputers, we've come a long way. Today, AI and electronics together are shaping a smarter, more efficient, and deeply connected world.</p>
+    </div>
+</section>
+
+
+<!-- Achievements Section -->
+<section class="content-section" id="achievements">
+    <div class="text">
+        <h2>Achievements</h2>
+        <p>Our students have consistently excelled in national competitions...
+        [Your achievements content]</p>
+    </div>
+    <div class="image">
+        <img src="image/idtr achievement.jpg" alt="Achievements">
+    </div>
+</section>
+
+<!-- Visit College Section -->
+<section class="content-section" id="visit">
+    <div class="text">
+        <h2>Visit College</h2>
+        <p>Plan a visit to our campus to explore our state-of-the-art facilities...
+        [Your visit content]</p>
+    </div>
+    <div class="image">
+        <img src="image/idtr visit.jpg" alt="Visit IDTR">
+    </div>
+</section>
+
+
+    <!-- Footer Boxes -->
+    <div class="footer-boxes">
+        <div class="box">
+            <h2>Contact</h2>
+            <p>Phone: +91-1234567890<br>Email: info@idtr.ac.in</p>
+        </div>
+        <div class="box">
+            <h2>Address</h2>
+            <p>Indo Danish Tool Room<br>MSME Tool Room, Jamshedpur<br>Jharkhand, India - 831004</p>
+        </div>
+    </div>
+
+    <!-- JavaScript for Dynamic Content -->
+    <script>
+        function showContent(section) {
+            const content = document.getElementById('dynamic-content');
+            const image = document.getElementById('content-image');
+
+            if (section === 'about') {
+                content.innerHTML = `
+                    <h2>About</h2>
+                    <p>Diploma in Advanced Mechatronics and Industrial Automation
+                    Empowering Future-Ready Technicians
+                    <br><br>
+                    The Diploma in Advanced Mechatronics and Industrial Automation (DAMIA) is a cutting-edge training program crafted to prepare students for the evolving demands of the modern manufacturing and automation industry. Built on a multidisciplinary foundation, DAMIA combines mechanical, electrical, electronics, and computer engineering to develop highly skilled and adaptable professionals.
+                    <br><br>
+                    This course not only strengthens theoretical knowledge but also emphasizes hands-on industrial training, making students proficient in real-world applications. With a focus on smart manufacturing, industrial automation, and digital transformation, DAMIA is aligned with the goals of Industry 4.0 and beyond.
+                    <br><br>
+                    Whether you aim to join top-tier industries, work on advanced robotics, or contribute to automation-driven innovations, DAMIA equips you with the tools, technologies, and technical mindset to thrive in a future-ready workplace.</p>
+                `;
+                image.src = 'image/about damia.jpg';
+                image.alt = 'IDTR College Front View';
+            } else if (section === 'history') {
+                content.innerHTML = `
+                    <h2>History</h2>
+                    <p>The world of technology has witnessed a groundbreaking transformation through the evolution of electronics and artificial intelligence (AI). From the invention of the first vacuum tubes to the rise of intelligent systems, this journey is a powerful story of human innovation, curiosity, and progress.
+What once started as basic electrical circuits has now evolved into machines that can think, learn, and make decisions.
+The synergy between hardware and software has opened doors to automation, connectivity, and real-time intelligence.
+From room-sized computers to pocket-sized supercomputers, we’ve come a long way.
+Today, AI and electronics together are shaping a smarter, more efficient, and deeply connected world.
+.</p>
+                `;
+                image.src = 'image/history.jpg';
+                image.alt = 'IDTR History Image';
+            } else if (section === 'achievements') {
+                content.innerHTML = `
+                    <h2>Achievements</h2>
+                    <p>Our students have consistently excelled in national competitions, and our alumni are placed in top-tier companies across India and abroad, making us a proud contributor to the skilled workforce.</p>
+                `;
+                image.src = 'image/idtr achievement.jpg';
+                image.alt = 'IDTR Achievement Image';
+            } else if (section === 'visit') {
+                content.innerHTML = `
+                    <h2>Visit College</h2>
+                    <p>Plan a visit to our campus to explore our state-of-the-art facilities, meet our dedicated faculty, and learn more about how IDTR shapes the future of technical education.</p>
+                `;
+                image.src = 'image/idtr visit.jpg';
+                image.alt = 'Visit IDTR Image';
+            }
+        }
+        <nav>
+    <button class="menu-toggle" onclick="toggleMenu()">Menu</button>
+    <div class="nav-buttons" id="navMenu">
+        <button class="button">Home</button>
+        <button class="button">About</button>
+        <button class="button">Login</button>
+        <button class="button" onclick="window.location.href='damia.html'">Damia</button>
+    </div>
+</nav>
+
+    </script>
+
+</body>
+</html>

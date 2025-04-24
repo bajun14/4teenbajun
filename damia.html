@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DAMIA - IDTR</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+    }
+
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 36px;
+    }
+
+    header p {
+      margin: 8px 0 0;
+      font-size: 18px;
+    }
+
+    /* Second Navbar */
+    .second-navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #002244;
+      padding: 10px 20px;
+      color: white;
+    }
+
+    .left-nav, .right-nav {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .left-nav .hamburger {
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .nav-button {
+      padding: 8px 14px;
+      background-color: white;
+      color: #003366;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .nav-button:hover {
+      background-color: #ddd;
+    }
+
+    .search-icon {
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Heading Section -->
+  <header>
+    <h1>DAMIA</h1>
+    <p>Industrial Diploma in Advanced Mechatronics and Industrial Automation</p>
+  </header>
+
+  <!-- Second Navbar -->
+  <nav class="second-navbar">
+    <div class="left-nav">
+      <div class="hamburger">☰</div>
+      <button class="nav-button">Know About Damia</button>
+    </div>
+    <div class="right-nav">
+      <button class="nav-button">Login</button>
+      <div class="search-icon">🔍</div>
+    </div>
+  </nav>
+
+</body>
+</html>
