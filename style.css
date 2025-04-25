@@ -1,0 +1,192 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f0f0f0;
+}
+
+/* Header Section */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #003366;
+    padding: 10px 20px;
+    color: white;
+}
+
+.logo-left, .logo-right {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 50px;
+    margin: 0 10px;
+}
+
+.college-name {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    flex: 1;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: #003366;
+    padding: 10px 20px;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.button {
+    padding: 8px 16px;
+    font-size: 16px;
+    background-color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #003366;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #ddd;
+}
+
+/* Hero Section (3rd Layer) */
+.hero {
+    position: relative;
+    height: 400px;
+    background-image: url('image/background.jpg'); /* Background Image */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.8; /* Slight transparency for the hero section */
+}
+
+/* Overlay Text in Hero Section */
+.hero-text {
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background for text */
+    padding: 40px;
+    border-radius: 8px;
+}
+
+.hero-text h1 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.hero-text p {
+    font-size: 18px;
+}
+
+.content-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+/* Content Sections (2nd Layer to 6th Layer) */
+.content-section {
+    display: flex;
+    padding: 40px 20px;
+    align-items: center;
+    background: url('image/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-attachment: fixed;
+    color: rgb(160, 131, 214);
+    position: relative;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.4); /* Transparent black background for content sections */
+}
+
+.content-section .text {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.content-section .text h2 {
+    font-size: 28px;
+    color: #e5ecf3;
+}
+
+.content-section .text p {
+    font-size: 16px;
+    color: #ece3e3;
+}
+
+.content-section .image {
+    flex: 1;
+}
+
+.content-section .image img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(218, 187, 187, 0.2);
+}
+
+/* Footer Section (6th Layer) */
+.footer-boxes {
+    display: flex;
+    justify-content: space-around;
+    padding: 30px 20px;
+}
+
+.box {
+    flex: 1;
+    max-width: 45%;
+    padding: 20px;
+    background-color: rgba(96, 161, 223, 0.8); /* Slightly transparent */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.box h2 {
+    color: #003366;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .hero {
+        height: 300px;
+    }
+
+    .hero-text h1 {
+        font-size: 28px;
+    }
+
+    .content-section {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .footer-boxes {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+}
