@@ -1,130 +1,135 @@
-/* General body styling */
+/* Global Styles */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('image/bg.jpg') no-repeat center center fixed;
-    background-size: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    background: linear-gradient(135deg, #74ebd5, #acb6e5); /* Light blue background */
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    margin: 0;
 }
 
-/* Container for both login and welcome */
-.container {
+body.loaded {
+    opacity: 1;
+}
+
+/* Wrapper for login and welcome sections */
+.login-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 80%;
-    max-width: 1000px;
-    height: 600px;
-    background-color: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(6px);
-    border-radius: 20px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-    animation: popup 0.8s ease-out;
+    max-width: 1000px; /* Adjust this if needed */
+    width: 100%;
+    padding: 20px;
 }
 
-/* Pop-up animation for login box */
-@keyframes popup {
-    0% { opacity: 0; transform: scale(0.8); }
-    100% { opacity: 1; transform: scale(1); }
-}
-
-/* Login box - LEFT SIDE */
+/* Left side: Login container */
 .login-container {
-    width: 50%;
-    padding: 40px;
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 12px 0 0 12px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    width: 45%;
+    padding: 40px 30px;
+    background: url('image/login.jpg') no-repeat center center/cover; /* Background image */
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    text-align: center;
+    animation: popup 0.6s ease; /* Popup animation */
+    background-blend-mode: overlay;
+    background-color: rgba(224, 217, 217, 0.7); /* White overlay to make text readable */
 }
 
-/* Title styling */
 .login-container h2 {
-    margin-bottom: 30px;
-    color: #2c3e50;
+    margin-bottom: 20px;
+    color: #333;
 }
 
-/* Input fields with expansion on click */
-.login-container input[type="text"],
-.login-container input[type="password"] {
-    width: 100%;
-    padding: 12px 15px;
+.login-container input,
+.login-container select {
+    width: 90%;
+    padding: 10px;
     margin: 10px 0;
+    border-radius: 8px;
     border: 1px solid #ccc;
-    border-radius: 8px;
-    box-sizing: border-box;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-size: 16px;
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
 }
 
-/* Expand the input fields on click */
-.login-container input[type="text"]:focus,
-.login-container input[type="password"]:focus {
-    transform: scale(1.05);
-    box-shadow: 0 0 8px rgba(0, 83, 156, 0.6);
+/* Enhance input on focus */
+.login-container input:focus,
+.login-container select:focus {
+    transform: scale(1.05); /* Zoom effect */
+    border-color: #9bb6d4;
     outline: none;
+    /* Add shadow and blur effect when focused */
+    box-shadow: 0 0 15px rgba(43, 7, 90, 0.5), 0 0 30px rgba(76, 175, 80, 0.4);
+    background-color: rgba(228, 238, 240, 0.918); /* Light background when focused */
 }
 
-/* Submit button */
+/* Submit Button Styling */
 .login-container input[type="submit"] {
-    background-color: #00539C;
+    background-color: #6e94db;
     color: white;
-    border: none;
-    padding: 12px;
-    width: 100%;
-    border-radius: 8px;
-    cursor: pointer;
     font-weight: bold;
-    transition: background-color 0.3s;
+    border: none;
+    cursor: pointer;
+    transition: background 2s, transform 2s;
 }
 
 .login-container input[type="submit"]:hover {
-    background-color: #003f7f;
+    background-color: #101a27;
+    transform: scale(1.05); /* Zoom button on hover */
 }
 
-/* Links styling */
 .login-container .links {
     margin-top: 15px;
+    color: #555;
 }
 
-.login-container .links a {
-    text-decoration: none;
-    color: #00539C;
-    font-size: 14px;
-    transition: color 0.3s;
+/* Popup Animation */
+@keyframes popup {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
-.login-container .links a:hover {
-    color: #003f7f;
-    text-decoration: underline;
-}
-
-/* Welcome Box - RIGHT SIDE */
-.welcome-box {
-    width: 50%;
-    height: 100%;
+/* Right side: Welcome message */
+.welcome-message {
+    width: 45%;
+    padding: 40px 30px;
+    background-color: rgba(33, 37, 41, 0.9); /* Dark background with transparency */
+    border-radius: 15px;
     color: white;
     text-align: center;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    animation: floatText 3s infinite ease-in-out;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    animation: popup 1s ease; /* Popup animation for welcome message */
 }
 
-/* Animation for floating text */
-@keyframes floatText {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-}
-
-.welcome-box h1 {
-    font-size: 42px;
+.welcome-message h2 {
     margin-bottom: 20px;
+    font-size: 30px;
 }
 
-.welcome-box p {
+.welcome-message p {
     font-size: 18px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .login-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .login-container, .welcome-message {
+        width: 90%;
+        margin-bottom: 20px;
+    }
 }

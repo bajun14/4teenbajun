@@ -6,6 +6,11 @@
     <title>Welcome to IDTR</title>
     <link rel="stylesheet" href="style.css">
 </head>
+<script>
+  window.addEventListener("load", () => {
+      document.body.classList.add("loaded");
+  });
+</script>
 <body>
 
     <!-- Header -->
@@ -24,7 +29,8 @@
         <div class="nav-buttons">
             <button class="button">Home</button>
             <button class="button">About</button>
-            <button class="button">Login</button>
+            <!-- Link to the login page -->
+            <button class="button" onclick="window.location.href='login.php'">Login</button>
         </div>
     </nav>
 
@@ -80,7 +86,7 @@
             const image = document.getElementById('content-image');
 
             if (section === 'about') {
-                content.innerHTML = `
+                content.innerHTML = ` 
                     <h2>About</h2>
                     <p>
                         Indo Danish Tool Room (IDTR), Jamshedpur is a leading institution dedicated to technical excellence and industrial skill development.
@@ -129,5 +135,12 @@
         }
     </script>
 
+<!-- Add this before </body> -->
+<script>
+  window.addEventListener("load", () => {
+      document.querySelector(".hero").classList.add("visible");
+      document.querySelector(".footer-boxes").classList.add("visible");
+  });
+</script>
 </body>
 </html>

@@ -1,0 +1,113 @@
+/* Page background */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #cfb1f1, #c2e9fb);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    animation: bgFade 2s ease-in-out;
+  }
+  
+  /* Fade-in effect */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .fade-in {
+    animation: fadeIn 1s ease forwards;
+  }
+  
+  /* Role container with image background and frosted glass effect */
+  .role-container {
+    background: url('image/role_selection.jpg') no-repeat center center;
+    background-size: cover;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    width: 320px;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Frosted overlay layer on image */
+  .role-container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(227, 215, 238, 0.829);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 15px;
+    z-index: 0;
+  }
+  
+  /* Heading inside container */
+  .role-container h2 {
+    margin-bottom: 30px;
+    color: #658af0;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Role selection buttons */
+  .role-buttons .btn {
+    display: block;
+    padding: 14px;
+    margin: 15px 0;
+    background: #d6f0f7;
+    color: rgb(72, 15, 110);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Hover effect on buttons */
+  .role-buttons .btn.glow:hover {
+    transform: scale(1.07);
+    box-shadow: 0 0 25px 8px rgba(228, 235, 241, 0.863);
+    background: #c6bbf7;
+  }
+  
+  /* Login link below buttons */
+  .login-link {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #122461;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .login-link a {
+    color: #061829;
+    text-decoration: none;
+  }
+  
+  .login-link a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Optional page background animation */
+  @keyframes bgFade {
+    from {
+      background-position: 0% 50%;
+    }
+    to {
+      background-position: 100% 50%;
+    }
+  }
+  

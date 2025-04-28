@@ -1,8 +1,28 @@
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes slideInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply fade-in on body load */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background: #f0f0f0;
+    animation: fadeIn 1s ease-in;
 }
 
 /* Header Section */
@@ -53,34 +73,35 @@ nav {
     border-radius: 4px;
     cursor: pointer;
     color: #003366;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .button:hover {
     background-color: #ddd;
+    transform: scale(1.05);
 }
 
-/* Hero Section (3rd Layer) */
+/* Hero Section */
 .hero {
     position: relative;
     height: 400px;
-    background-image: url('image/background.jpg'); /* Background Image */
+    background-image: url('image/background.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0.8; /* Slight transparency for the hero section */
+    opacity: 0.8;
 }
 
-/* Overlay Text in Hero Section */
 .hero-text {
     text-align: center;
     color: white;
-    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background for text */
+    background-color: rgba(0, 0, 0, 0.6);
     padding: 40px;
     border-radius: 8px;
+    animation: slideInUp 1s ease-out;
 }
 
 .hero-text h1 {
@@ -99,7 +120,7 @@ nav {
     margin: 20px 0;
 }
 
-/* Content Sections (2nd Layer to 6th Layer) */
+/* Content Sections */
 .content-section {
     display: flex;
     padding: 40px 20px;
@@ -110,7 +131,8 @@ nav {
     color: rgb(160, 131, 214);
     position: relative;
     z-index: 1;
-    background-color: rgba(0, 0, 0, 0.4); /* Transparent black background for content sections */
+    background-color: rgba(0, 0, 0, 0.4);
+    animation: fadeIn 1s ease-in;
 }
 
 .content-section .text {
@@ -136,9 +158,14 @@ nav {
     max-width: 100%;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(218, 187, 187, 0.2);
+    transition: transform 0.4s ease;
 }
 
-/* Footer Section (6th Layer) */
+.content-section .image img:hover {
+    transform: scale(1.03);
+}
+
+/* Footer Section */
 .footer-boxes {
     display: flex;
     justify-content: space-around;
@@ -149,44 +176,16 @@ nav {
     flex: 1;
     max-width: 45%;
     padding: 20px;
-    background-color: rgba(96, 161, 223, 0.8); /* Slightly transparent */
+    background-color: rgba(96, 161, 223, 0.8);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
+    animation: fadeIn 1.2s ease-in;
 }
 
 .box h2 {
     color: #003366;
     margin-bottom: 10px;
-}
+} 
 
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        text-align: center;
-    }
 
-    .nav-buttons {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
 
-    .hero {
-        height: 300px;
-    }
-
-    .hero-text h1 {
-        font-size: 28px;
-    }
-
-    .content-section {
-        flex-direction: column;
-        padding: 20px;
-    }
-
-    .footer-boxes {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-}
