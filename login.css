@@ -39,6 +39,7 @@ body.loaded {
     animation: popup 0.6s ease; /* Popup animation */
     background-blend-mode: overlay;
     background-color: rgba(224, 217, 217, 0.7); /* White overlay to make text readable */
+    border-radius: 70px; /* Remove corners */
 }
 
 .login-container h2 {

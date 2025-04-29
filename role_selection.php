@@ -9,8 +9,9 @@
   <div class="role-container fade-in">
     <h2>Select Your Role</h2>
     <div class="role-buttons">
-      <a href="faculty_register.php" class="btn glow">Register as Faculty</a>
-      <a href="student_register.php" class="btn glow">Register as Student</a>
+      <!-- Links for role selection -->
+      <a href="faculty_registration.php" class="btn glow">Register as Faculty</a>
+      <a href="student_registration.php" class="btn glow">Register as Student</a>
     </div>
     <p class="login-link">
       Already have an account? <a href="login.php">Login here</a>
